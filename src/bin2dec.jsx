@@ -7,6 +7,11 @@ export default class Bin2Dec extends React.Component {
     this.state = {
       binary: 0
     }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ binary: event.target.value })
   }
 
   render() {
@@ -19,7 +24,7 @@ export default class Bin2Dec extends React.Component {
           <p className="text">Enter Binary Code Below.</p>
         </div>
         <div className="input-container">
-          <input type="text" id="converter-input" name="converter-input"></input>
+          <input type="text" id="converter-input" name="converter-input" onChange={this.handleChange}></input>
         </div>
         <div className="decimal-container">
           <p className="decimal-value"></p>
