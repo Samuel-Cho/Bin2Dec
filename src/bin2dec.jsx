@@ -21,7 +21,7 @@ export default class Bin2Dec extends React.Component {
           <h1 className="converter-name">Binary to Decimal Converter</h1>
         </div>
         <div className="text-container">
-          <p className="text">Enter Binary Code Below.</p>
+          <EnterCode binary={this.state.binary} />
         </div>
         <div className="input-container">
           <input type="text" id="converter-input" name="converter-input" onChange={this.handleChange}></input>
@@ -32,4 +32,14 @@ export default class Bin2Dec extends React.Component {
       </div>
     );
   }
+}
+
+function EnterCode(props) {
+  const binary = props.binary;
+  for (let i = 0; i < binary.length; i++) {
+    if (binary[i] !== "0" || binary[i] !== "1") {
+      return <p className="text">Binary number can only contain "1" or "0".</p>;
+    }
+  }
+  return <p className="text">Enter Binary Code Below.</p>;
 }
