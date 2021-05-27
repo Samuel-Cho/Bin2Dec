@@ -37,9 +37,11 @@ export default class Bin2Dec extends React.Component {
 function EnterCode(props) {
   const binary = props.binary;
   for (let i = 0; i < binary.length; i++) {
-    if (binary[i] !== "0" || binary[i] !== "1") {
-      return <p className="text">Binary number can only contain "1" or "0".</p>;
+    if (binary[i] !== "0" && binary[i] !== "1" && binary[i] === " ") {
+      return <p className="text">Please remove "space" characters.</p>
+    } else if (binary[i] !== "0" && binary[i] !== "1") {
+      return <p className="text">Binary number can only contain "1" or "0".</p>
     }
   }
-  return <p className="text">Enter Binary Code Below.</p>;
+  return <p className="text">Enter Binary Code Below.</p>
 }
