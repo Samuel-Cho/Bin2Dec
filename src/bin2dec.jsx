@@ -27,7 +27,7 @@ export default class Bin2Dec extends React.Component {
           <input type="text" id="converter-input" name="converter-input" onChange={this.handleChange}></input>
         </div>
         <div className="decimal-container">
-          <p className="decimal-value"></p>
+          <DecimalValue binary={this.state.binary} />
         </div>
       </div>
     );
@@ -44,4 +44,8 @@ function EnterCode(props) {
     }
   }
   return <p className="text">Enter Binary Code Below.</p>
+}
+
+function DecimalValue(props) {
+  return <p className="decimal-value"></p>
 }
